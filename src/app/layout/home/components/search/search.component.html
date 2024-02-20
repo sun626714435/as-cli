@@ -1,0 +1,57 @@
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+  <div nz-row [nzGutter]="16">
+    <div nz-col nzSpan="6">
+      <nz-form-item>
+        <nz-form-control>
+          <input
+            type="text"
+            nz-input
+            formControlName="search1"
+            placeholder="选择第几行数据"
+          />
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+    <div nz-col nzSpan="6">
+      <nz-form-item>
+        <nz-form-control>
+          <input
+            type="text"
+            nz-input
+            formControlName="search2"
+            placeholder="条件2没用"
+          />
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+    <div nz-col nzSpan="6">
+      <nz-form-item>
+        <nz-form-control>
+          <input
+            type="text"
+            nz-input
+            formControlName="search3"
+            placeholder="条件3装饰"
+          />
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+    <div nz-col nzSpan="6">
+      <nz-form-item>
+        <nz-form-control>
+          <input
+            type="text"
+            nz-input
+            formControlName="search4"
+            placeholder="条件4装饰"
+          />
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+  </div>
+  <div nz-row>
+    <div nz-col [nzSpan]="24" class="search-area" style="text-align: right">
+      <button nz-button [nzType]="'primary'">Search</button>
+    </div>
+  </div>
+</form>

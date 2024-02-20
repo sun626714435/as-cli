@@ -1,0 +1,48 @@
+<app-search (search)="search($event)"></app-search>
+
+<button nz-button [nzType]="'primary'" (click)="add()">Add</button>
+<nz-table #basicTable [nzData]="listOfData" [nzPageSize]="3">
+  <thead>
+    <tr>
+      <th *ngFor="let a of arr(12); index as i">列{{ i + 1 }}</th>
+      <th>操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let d of basicTable.data; index as id">
+      <td *ngFor="let a of arr(11); index as i">
+        {{ d["col" + (i + 1)] }}
+      </td>
+      <td>{{ d.name }}</td>
+      <td>
+        <a (click)="del(d)">删除</a> &nbsp;&nbsp;
+        <a (click)="detail(d)">详情</a>&nbsp;&nbsp;
+        <a (click)="edit(d)">编辑</a>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>
+
+<nz-modal
+  [(nzVisible)]="isDelVisible"
+  nzTitle="提示"
+  (nzOnCancel)="isDelVisible = false"
+  (nzOnOk)="delOk()"
+>
+  <ng-container *nzModalContent> 确认删除？ </ng-container>
+</nz-modal>
+
+<nz-modal
+  [(nzVisible)]="isFormVisible"
+  [nzTitle]="dialogTitle"
+  (nzOnCancel)="cancel()"
+  (nzOnOk)="handleOk()"
+>
+  <ng-container *nzModalContent>
+    <dialogForm
+      [currentData]="currentData"
+      [type]="dialogTitle"
+      #form
+    ></dialogForm>
+  </ng-container>
+</nz-modal>

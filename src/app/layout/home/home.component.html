@@ -1,0 +1,38 @@
+<nz-layout>
+  <nz-sider nzCollapsible nzWidth="200px">
+    <h3 class="title">管理系统</h3>
+    <ul nz-menu nzTheme="dark" nzMode="inline">
+      <ng-container *ngFor="let m of menus">
+        <li nz-menu-item (click)="goto(m)">
+          <span nz-icon [nzType]="m.icon"></span>
+          <span>{{ m.label }}</span>
+        </li>
+      </ng-container>
+    </ul>
+  </nz-sider>
+  <nz-layout>
+    <nz-header>
+      <div
+        class="user"
+        nz-popover
+        nzPopoverTitle=""
+        [nzPopoverContent]="contentTemplate"
+        nzPopoverPlacement="rightBottom"
+      >
+        <span
+          style="font-size: 24px"
+          nz-icon
+          nzType="reddit"
+          nzTheme="outline"
+        ></span>
+        哈哈哈哈
+      </div>
+      <ng-template #contentTemplate>
+        <button nz-button nzType="primary" (click)="out()">log out</button>
+      </ng-template>
+    </nz-header>
+    <nz-content>
+      <router-outlet></router-outlet>
+    </nz-content>
+  </nz-layout>
+</nz-layout>
