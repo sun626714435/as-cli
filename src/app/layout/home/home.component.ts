@@ -13,19 +13,11 @@ export class HomeComponent implements OnInit {
     private businessService: BusinessService,
     private router: Router
   ) {}
-
   ngOnInit() {
-    // this.menus = [
-    //   {
-    //     label: '菜单三',
-    //     icon: 'setting',
-    //     address: '/list',
-    //   },
-    // ];
-    // this.businessService.getMenu().subscribe((res: any) => {
-    //   this.menus = res.data;
-    //   this.router.navigate([`/home/table`]);
-    // });
+    this.businessService.getMenu().subscribe((res: any) => {
+      this.menus = res.data;
+      this.router.navigate([`/home/table`]);
+    });
   }
   out(): void {
     this.router.navigate(['/login']);

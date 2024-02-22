@@ -27,6 +27,7 @@ import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzUploadModule } from 'ng-zorro-antd/upload';
 import { ImageComponent } from './components/image/image.component';
 import { NzMessageService } from 'ng-zorro-antd/message';
+import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 
 @NgModule({
   imports: [
@@ -50,6 +51,7 @@ import { NzMessageService } from 'ng-zorro-antd/message';
     NzDividerModule,
     NzDropDownModule,
     NzUploadModule,
+    NzAvatarModule,
   ],
   declarations: [
     HomeComponent,

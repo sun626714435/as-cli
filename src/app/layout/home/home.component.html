@@ -1,5 +1,10 @@
 <nz-layout>
-  <nz-sider nzCollapsible nzWidth="200px">
+  <nz-sider
+    nzCollapsible
+    nzWidth="200px"
+    nzBreakpoint="lg"
+    [nzCollapsedWidth]="0"
+  >
     <h3 class="title">管理系统</h3>
     <ul nz-menu nzTheme="dark" nzMode="inline">
       <ng-container *ngFor="let m of menus">
@@ -12,24 +17,16 @@
   </nz-sider>
   <nz-layout>
     <nz-header>
-      <div
-        class="user"
-        nz-popover
-        nzPopoverTitle=""
-        [nzPopoverContent]="contentTemplate"
-        nzPopoverPlacement="rightBottom"
-      >
+      <div class="user">
+        <nz-avatar [nzSize]="32" nzIcon="user"></nz-avatar>
         <span
-          style="font-size: 24px"
+          style="margin-left: 4px; cursor: pointer"
           nz-icon
-          nzType="reddit"
+          nzType="logout"
           nzTheme="outline"
+          (click)="out()"
         ></span>
-        哈哈哈哈
       </div>
-      <ng-template #contentTemplate>
-        <button nz-button nzType="primary" (click)="out()">log out</button>
-      </ng-template>
     </nz-header>
     <nz-content>
       <router-outlet></router-outlet>
